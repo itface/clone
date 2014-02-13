@@ -1,0 +1,37 @@
+package shallowClone;
+
+public class Teacher implements Cloneable{
+
+	private String name;
+	private int age;
+	
+	public Teacher(String name,int age){
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Object clone(){
+		Teacher teacher = null;
+		try {
+			teacher = (Teacher)super.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace(System.err);
+		}
+		return teacher;
+	}
+}
